@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding:1px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<form action="/action_page.php" id="myForm">
+  <div class="container">
+    <h1>REGISTRO DE UNIVERSIDADES</h1>
+    <p>Por favor llenar este formulario para crear una cuenta</p>
+    <hr>
+    
+    <label for="nombre"><b>Nombre de la Entidad</b></label>
+    <input id="nombre" type="text" placeholder="Ingresar Nombre" name="nombre" required>
+    
+    
+    <label for="correo"><b>Correo</b></label>
+    <input id="correo" type="text" placeholder="Ingresar Correo" name="correo" required>
+
+    <label for="psw"><b>Contraseña</b></label>
+    <input type="password" id="psw" name="psw" minlength="4" placeholder="Ingresar Contraseña"required>
+
+    
+    <p>Para crear una cuenta usted acepta <a href="https://sites.google.com/correounivalle.edu.co/terminos-y-condiciones/p%C3%A1gina-principal?authuser=1">Terms & Privacy</a>.</p>
+     
+     
+     
+    <div class="container"> 
+    <center><button onclick="enviarFormulario()"  type="button" class="registerbtn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" >Registrarse</button> </center>
+    
+    <center><button><a TARGET="Blanck_" href="http://ingresointeligente.cf">Regresar</a></button></center>
+    
+    <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">REGISTRARSE</h4>
+        </div>
+        <div class="modal-body">
+          <p>SU REGISTRO FUE EXITOSO</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" onclick="myFunction();cerrarwindows()" value="Reset form">CERRAR</button>
+          
+         <script>
+        function myFunction() {
+        
+        document.getElementById("myForm").reset();
+        }
+        </script>
+        <script>
+        function cerrarwindows() {
+        
+        window.close();
+        
+        }
+        </script>
+        
+        <script>
+function ejecutaAlerta() {   
+
+window.open('https://www.codexworld.com');
+}
+</script>
+                     
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+    
+    
+  </div>
+  
+  <div class="container signin">
+  <p>Ya tiene una cuenta? <a TARGET="Blanck_" href="https://script.google.com/macros/s/AKfycbxKFRIvyMQ1BVtsohfgjVCoRWYmy1jNmh3UOBmZsWK4_y-HqJWO/exec">Iniciar Sesión</a>.</p>
+  </div>
+</form>
+    <script type="text/javascript">
+    function enviarFormulario() {
+    google.script.run.obtenerValores(document.forms[0]);
+    }
+    </script>
+</body>
+</html>
